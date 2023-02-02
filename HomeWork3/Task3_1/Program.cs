@@ -30,7 +30,7 @@ int GetNumber(string message)
 }
 
 int x = GetNumber("Введите пятизначное число");
-if (x<10000||x>100000)
+if (x<10000||x>99999)
 {
     Console.WriteLine("Вы не ввели пятизначное число");
 }
