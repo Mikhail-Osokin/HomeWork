@@ -4,14 +4,14 @@
 b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 */
 
-int GetNumber(string message)
+double GetNumber(string message)
 
 {
-    int result = 0;
+    double result = 0;
     while (true)
     {
         Console.WriteLine(message);
-        if (int.TryParse(Console.ReadLine(), out result))
+        if (double.TryParse(Console.ReadLine(), out result))
             break;
         else
             Console.WriteLine("Ввели некорректное число. Повторите ввод");
@@ -19,18 +19,18 @@ int GetNumber(string message)
     return result;
 }
 
-void GetCoordSolution(int b1, int b2, int k1, int k2)
+void GetCoordSolution(double b1, double b2, double k1, double k2)
 {
-    int x = 0;
-    int y = 0;
-    x = b1-b2/k2-k1;
+    double x = 0;
+    double y = 0;
+    x = (b1-b2)/(k2-k1);
     y = k1*x+b1;
     Console.WriteLine($"Точкой пересечения прямых y={k1}*x+{b1} и y={k2}*x+{b2} является ({x},{y})");
 }
 
-int k1 = GetNumber("Введите коэфициент k1 ");
-int b1 = GetNumber("Введите константу b1 ");
-int k2 = GetNumber("Введите коэфициент k2 ");
-int b2 = GetNumber("Введите константу b1 ");
+double k1 = GetNumber("Введите коэфициент k1 ");
+double b1 = GetNumber("Введите константу b1 ");
+double k2 = GetNumber("Введите коэфициент k2 ");
+double b2 = GetNumber("Введите константу b1 ");
 
 GetCoordSolution(b1,b2,k1,k2);
