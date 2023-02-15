@@ -23,9 +23,22 @@ void GetCoordSolution(double b1, double b2, double k1, double k2)
 {
     double x = 0;
     double y = 0;
-    x = (b1-b2)/(k2-k1);
-    y = k1*x+b1;
-    Console.WriteLine($"Точкой пересечения прямых y={k1}*x+{b1} и y={k2}*x+{b2} является ({x},{y})");
+    if (k1==k2 && b1 == b2)
+    {
+        Console.WriteLine($"прямые y={k1}*x+{b1} и y={k2}*x+{b2} совпадают");
+        return;
+    }
+    else if (k1==k2 && b1 != b2)
+    {
+        Console.WriteLine($"прямые y={k1}*x+{b1} и y={k2}*x+{b2} параллельны, точек персечения нет");
+        return;
+    }
+    else
+    {
+        x = (b1-b2)/(k2-k1);
+        y = k1*x+b1;
+        Console.WriteLine($"Точкой пересечения прямых y={k1}*x+{b1} и y={k2}*x+{b2} является ({x},{y})");
+    }
 }
 
 double k1 = GetNumber("Введите коэфициент k1 ");
