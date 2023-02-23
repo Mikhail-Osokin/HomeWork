@@ -23,7 +23,7 @@ int [,] InitMatrix()
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i,j] = rmd.Next(1,10); 
+            matrix[i,j] = rmd.Next(-9,10); 
         }
     }
 return matrix;
